@@ -1,4 +1,4 @@
 test("null is falsy", ()=>{
-    const n = null
-    expect(n).toBeFalsy()
+    const n = 1
+    expect(n).toBeTruthy()
 })
