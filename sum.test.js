@@ -1,15 +1,9 @@
-const fetchData = require("./sum")
+const fetchPromise = require("./sum")
 
-test("data is peanut", done => {
-    function callback(data) {
-        try {
-            expect(data).toBe("peanut")
-            done()
-        }
-        catch (err) {
-            done(err)
-        }
-    }
+test("data is peanut", () => {
+    return expect(fetchPromise()).resolves.toBe("peanut")
+})
 
-    fetchData(callback)
+test("promise rejected", ()=>{
+    return expect(fetchPromise()).rejects.toThrow("error")
 })
