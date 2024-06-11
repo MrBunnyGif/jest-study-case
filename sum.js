@@ -1,12 +1,7 @@
-// function sum(a, b) {
-//     return a + b
-// }
-
-// module.exports = sum
-
-function myFun(a) {
-    if (typeof a !== "number")
-        throw new Error("invalid input")
+function fetchData(callback) {
+    setTimeout(() => {
+        callback("peanut")
+    }, 1000);
 }
 
-module.exports = myFun
+module.exports = fetchData

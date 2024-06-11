@@ -1,7 +1,15 @@
-const myFun = require("./sum")
+const fetchData = require("./sum")
 
-test("throws on invalid input", () => {
-    expect(() => {
-        myFun()
-    }).toThrow()
+test("data is peanut", done => {
+    function callback(data) {
+        try {
+            expect(data).toBe("peanut")
+            done()
+        }
+        catch (err) {
+            done(err)
+        }
+    }
+
+    fetchData(callback)
 })
